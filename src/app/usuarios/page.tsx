@@ -8,7 +8,7 @@ import { get } from "../actions/usuarios/get";
 import { UsuarioItem } from "./UsuarioItem";
 
 export default async function Usuarios() {
-  const usuarios: Array<Usuario> = await get()
+  const usuarios = await get()
   const pratos: Array<Prato> = await getPratos()
 
   return (
@@ -25,13 +25,11 @@ export default async function Usuarios() {
 
         <div className="flex gap-4 items-center border-1 border-white/10 p-4 rounded">
           <Filter size={44} />
-          <PratoSelect pratos={pratos} />
+          {/* <PratoSelect pratos={pratos} /> */}
         </div>
-
-        {usuarios.map(usuario =>
+        {/* {usuarios.map(usuario =>
           <UsuarioItem usuario={usuario} />
-        )}
-
+        )} */}
       </section>
 
       <Pagination isCompact showControls total={10} initialPage={1} className="mt-6" />

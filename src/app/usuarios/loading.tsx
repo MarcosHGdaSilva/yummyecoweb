@@ -11,9 +11,9 @@ export default function Loading() {
 
             <section className="flex flex-col gap-2 bg-slate-800 min-w-[600px] mt-4 p-2 rounded">
                 <div className="flex justify-between">
-                    <h2 className="text-2xl font-bold">Usuarios</h2>
+                    <h2 className="text-2xl font-bold">Usuários</h2>
                     <Link href="/usuarios/new">
-                        <Button color="primary" startContent={<Plus />}>novo usuario</Button>
+                        <Button color="primary" startContent={<Plus />}>Novo Usuário</Button>
                     </Link>
                 </div>
 

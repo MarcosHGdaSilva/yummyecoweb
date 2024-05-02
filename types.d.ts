@@ -1,11 +1,13 @@
-interface Categoria {
+interface Prato {
     id: number,
     nome: string,
     valor: number
 }
 
-interface Movimentacao {
+interface Usuario {
     id: number,
     nome: string,
-    rg: string,
+    email: string,
+    senha: string,
+    prato: Prato
 }

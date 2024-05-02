@@ -29,17 +29,18 @@ export default function CadastrarPrato() {
                     labelPlacement={"outside"}
                     isInvalid={state?.message != ''}
                     errorMessage={state?.message}
+                    placeholder="Nome"
                 />
-
-                <Autocomplete
-                    label="Ícone"
-                    name="icone"
+                <Input
+                    key="valor"
+                    label="Valor"
+                    name="valor"
                     variant="bordered"
                     labelPlacement={"outside"}
-                    placeholder="procurar ícone"
-                >
-                </Autocomplete>
-
+                    isInvalid={state?.message != ''}
+                    errorMessage={state?.message}
+                    placeholder="Valor"
+                />
                 <div className="flex justify-around mt-4">
                     <Link href="/pratos">
                         <Button variant="bordered" >cancelar</Button>

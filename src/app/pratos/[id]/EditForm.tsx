@@ -12,9 +12,8 @@ const initialState = {
 }
 
 
-export function EditForm(prato: Prato) {
+export function EditForm(prato: Pratos) {
     const [state, formAction] = useFormState(update, initialState)
-
     return (
         <form action={formAction} className="flex flex-col gap-3 m-6 bg-slate-900 rounded p-6 min-w-[500px]">
             <h2 className="text-2xl font-bold">Editar Prato {prato.nome}</h2>
@@ -30,15 +29,16 @@ export function EditForm(prato: Prato) {
                 errorMessage={state?.message}
             />
 
-            <Autocomplete
-                label="Ícone"
-                name="icone"
+            <Input
+                key="valor"
+                label="Valor"
+                name="valor"
                 variant="bordered"
-                defaultInputValue={prato.icone}
+                defaultValue={prato.valor}
                 labelPlacement={"outside"}
-                placeholder="procurar ícone"
-            >
-            </Autocomplete>
+                isInvalid={state?.message != ''}
+                errorMessage={state?.message}
+            />
 
             <div className="flex justify-around mt-4">
                 <Link href="/pratos">

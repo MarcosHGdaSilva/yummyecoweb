@@ -4,7 +4,6 @@ import { redirect } from "next/navigation"
 export async function update(prevState: any, formData: FormData) {
     const data = {
         nome: formData.get('nome'),
-        rg: formData.get('rg'),
     }
     const response = await fetch(`http://localhost:8080/usuario/${formData.get('id')}`, {
         method: 'PUT',

@@ -16,7 +16,7 @@ export async function destroy(id: number){
     }
     
     if (resp.ok){
-        redirect("/usarios")
+        redirect("/usuarios")
     }
 
 

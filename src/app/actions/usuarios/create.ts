@@ -11,7 +11,11 @@ export async function create(prevState: any, formData: FormData){
     
     const data = {
         nome: formData.get("nome"),
-        rg: formData.get("rg"),
+        email: formData.get("email"),
+        senha: formData.get("senha"),
+        prato: {
+            id: formData.get("prato")
+        }
     }
 
     const options = {
@@ -33,7 +37,8 @@ export async function create(prevState: any, formData: FormData){
 
         return {
             message_nome: messages.find( (m: any) => m.campo == "nome")?.mensagem || '',
-            message_rg: messages.find( (m: any) => m.campo == "rg")?.mensagem || '',
+            message_email: messages.find( (m: any) => m.campo == "email")?.mensagem || '',
+            message_senha: messages.find( (m: any) => m.campo == "senha")?.mensagem || '',
         }
     }
     

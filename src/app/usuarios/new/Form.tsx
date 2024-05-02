@@ -12,7 +12,8 @@ import { useFormState } from "react-dom";
 
 const initialState = {
     message_nome: '',
-    message_valor: '',
+    message_email: '',
+    message_senha: '',
 }
 
 
@@ -22,7 +23,7 @@ export function Form(props: { pratos: Array<Prato> }) {
     const [state, formAction] = useFormState(create, initialState)
     return (
         <form action={formAction} className="flex flex-col gap-3 m-6 bg-slate-900 rounded p-6 min-w-[500px]">
-            <h2 className="text-2xl font-bold">Nova Movimentação</h2>
+            <h2 className="text-2xl font-bold">Novo Prato</h2>
             <Input
                 key="nome"
                 label="Nome"
@@ -33,23 +34,25 @@ export function Form(props: { pratos: Array<Prato> }) {
                 isInvalid={state?.message_nome != ''}
                 errorMessage={state?.message_nome}
             />
-
             <Input
-                type="number"
-                pattern="[0-9]*"
-                key="valor"
-                label="Valor"
-                name="valor"
+                key="email"
+                label="Email"
+                name="email"
                 variant="bordered"
                 labelPlacement={"outside"}
                 isRequired={true}
-                startContent={
-                    <div className="pointer-events-none flex items-center">
-                        <span className="text-default-400 text-small">R$</span>
-                    </div>
-                }
-                isInvalid={state?.message_rg != ''}
-                errorMessage={state?.message_rg}
+                isInvalid={state?.message_email != ''}
+                errorMessage={state?.message_email}
+            />
+            <Input
+                key="senha"
+                label="Senha"
+                name="senha"
+                variant="bordered"
+                labelPlacement={"outside"}
+                isRequired={true}
+                isInvalid={state?.message_senha != ''}
+                errorMessage={state?.message_senha}
             />
 
             <PratoSelect pratos={pratos} />
